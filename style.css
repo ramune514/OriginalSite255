@@ -1,0 +1,315 @@
+/* 全体設定 */
+body {
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header img {
+    max-height: 40px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+header ul li {
+    padding: 0 15px;
+}
+
+header ul li a {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #7BC3D1;
+}
+
+/* 各見出し */
+h1 {
+    font-size: 60px;
+    letter-spacing: 3px;
+    color: #333;
+    text-shadow: 2px 2px 0px #fff;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+hr {
+    margin-bottom: 30px;
+    height: 5px;
+    border: none;
+}
+
+.blue-line {
+    width: 300px;
+    background-color: #7BC3D1;
+}
+
+.red-line {
+    width: 500px;
+    background-color: #778899;
+}
+
+.sub-text {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 5px;
+}
+
+/* 各セクション背景 */
+#top {
+    background-image: url('image/スクリーンショット 2026-06-26 15.52.35 2.png');
+    background-size: 160px;
+    padding: 180px 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: overlay;
+}
+
+#about {
+    background-color: #E6FAFC;
+    padding: 80px 20px;
+    font-size: 18px;
+}
+
+#skills {
+    background-color: #FFFFFF;
+    padding: 80px 20px;  
+}
+
+#portfolio {
+    background-color: #E3E3DC;
+    padding: 80px 20px;
+}
+
+/* プロフィールレイアウト */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* 詳細カード */
+.skill-card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 25px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    min-width: 240px;
+}
+
+.skill-card p {
+    margin: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+/* 画像と吹き出しのラッパー */
+.img-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+/* キャラクター画像 */
+.skill-img {
+    width: 150px;
+    height: auto;
+    mix-blend-mode: multiply;
+    filter: contrast(115%);
+    transition: transform 0.2s ease;
+}
+
+.img-wrapper:hover .skill-img {
+    transform: scale(1.08);
+}
+
+/* 吹き出しデザイン */
+.speech-bubble {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333333;
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: pop 0.3s ease;
+}
+
+/* 吹き出しの三角部分 */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: #333333 transparent;
+}
+
+@keyframes pop {
+    0% { transform: translateX(-50%) scale(0.5); opacity: 0; }
+    100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.hidden {
+    display: none;
+}
+
+/* 目撃情報セクション */
+#witness {
+    background-color: #F4F4F0;
+    padding: 80px 20px;
+}
+
+.witness-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.witness-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #7BC3D1;
+}
+
+.witness-user {
+    font-weight: bold;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.witness-text {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* フッター */
+footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 20px;
+    font-size: 14px;
+}
+
+#top { animation: bgMove 10s linear infinite; }
+@keyframes bgMove { 0% { background-position: 0 0; } 100% { background-position: 160px 160px; } }
+
+.skill-img { animation: float 2s infinite alternate ease-in-out; }
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+/* グッズ紹介セクション */
+#goods {
+    background-color: #FFFFFF;
+    padding: 80px 20px;
+}
+
+.goods-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.goods-card {
+    background-color: #FAFAFA;
+    border: 2px solid #E3E3DC;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goods-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 画像表示エリア枠組み */
+.goods-img-wrapper {
+    width: 100%;
+    height: 220px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #EEEEEE;
+}
+
+.goods-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.goods-card h3 {
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+    color: #333333;
+}
+
+.goods-price {
+    font-weight: bold;
+    color: #7BC3D1;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+.goods-desc {
+    font-size: 13.5px;
+    color: #666666;
+    margin: 0;
+    text-align: left;
+    line-height: 1.5;
+}
+
+

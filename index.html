@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>におおっぴとさとうきっぴ 公式サイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-logo">
+            <img src="image/logo.png" alt="ロゴ">
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">におおっぴ</a></li>
+            <li><a href="#portfolio">さとうきっぴ</a></li>
+            <li><a href="#goods">グッズ</a></li>
+            <li><a href="#witness">目撃情報</a></li>
+        </ul>
+    </header>
+
+    <div id="top">
+        <h1>におおっぴ と<br>さとうきっぴ</h1>
+    </div>
+
+    <div id="about">
+        <h2>におおっぴとさとうきっぴとは</h2>
+        <p>2026年に何者かによって生み出された謎生物。<br>覚醒すると赤くなるらしい。</p>
+    </div>
+
+    <div id="skills">
+        <h2>におおっぴの詳細</h2>
+        <hr class="blue-line">
+        <p class="sub-text">※画像をタップすると喋るよ！</p>
+        <div class="skills-container">
+            <div class="img-wrapper" onclick="speak('niooppi')">
+                <div id="speech-niooppi" class="speech-bubble hidden">投資は自己責任でね</div>
+                <img src="image/スクリーンショット 2026-06-26 15.52.35 2.png" alt="におおっぴ" class="skill-img">
+            </div>
+
+            <div class="skill-card">
+                <p><strong>身長：</strong>35センチ</p>
+                <p><strong>体重：</strong>50グラム</p>
+                <p><strong>趣味：</strong>投資</p>
+                <p><strong>特技：</strong>偶像崇拝</p>
+                <p><strong>好きなもの：</strong>ぶどう</p>
+                <p><strong>嫌いなもの：</strong>終末</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <h2>新キャラ さとうきっぴの詳細</h2>
+        <hr class="red-line">
+        <p class="sub-text">※画像をタップすると喋るよ！</p>
+        <div class="skills-container">
+            <div class="img-wrapper" onclick="speak('satokippi')">
+                <div id="speech-satokippi" class="speech-bubble hidden">大道芸見せるよ！</div>
+                <img src="image/ 2026-07-21 12.00.25.png" alt="さとうきっぴ" class="skill-img">
+            </div>
+
+            <div class="skill-card">
+                <p><strong>身長：</strong>32センチ</p>
+                <p><strong>体重：</strong>530グラム</p>
+                <p><strong>趣味：</strong>編み物</p>
+                <p><strong>特技：</strong>大道芸</p>
+                <p><strong>好きなもの：</strong>虫の踊り食い</p>
+                <p><strong>嫌いなもの：</strong>救済</p>
+            </div>
+        </div>
+    </div>
+
+<div id="goods">
+    <h2>オリジナルグッズ</h2>
+    <hr class="blue-line">
+    <div class="goods-container">
+
+        <!-- Tシャツ -->
+        <div class="goods-card">
+            <!-- 画像を押すと buy.html に商品情報を渡して移動 -->
+            <a href="buy.html?item=tshirt">
+                <div class="goods-img-wrapper">
+                    <img src="image/におおっぴT.png" alt="におおっぴ Tシャツ" class="goods-img">
+                </div>
+            </a>
+            <h3>におおっぴ 公式Tシャツ</h3>
+            <p class="goods-price">￥2,700</p>
+            <p class="goods-desc">着ていると投資の運気が上がるかもしれない特製Tシャツ。</p>
+        </div>
+
+        <!-- ぬいぐるみ -->
+        <div class="goods-card">
+            <!-- 画像を押すと buy.html に商品情報を渡して移動 -->
+            <a href="buy.html?item=plush">
+                <div class="goods-img-wrapper">
+                    <img src="image/におおっぴ.png" alt="さとうきっぴ ぬいぐるみ" class="goods-img">
+                </div>
+            </a>
+            <h3>におおっぴ ぬいぐるみ</h3>
+            <p class="goods-price">￥100万</p>
+            <p class="goods-desc">触覚が長いので邪魔してくる。</p>
+        </div>
+    </div>
+</div>
+
+
+    <div id="witness">
+        <h2>目撃情報掲示板</h2>
+        <div class="witness-container">
+            <div class="witness-card">
+                <div class="witness-user">👤 街の投資家さん</div>
+                <p class="witness-text">公園のベンチで、におおっぴが真剣な顔でスマホの株価チャートを二度見していました。</p>
+            </div>
+            <div class="witness-card">
+                <div class="witness-user">👤 通行人Aさん</div>
+                <p class="witness-text">駅前でさとうきっぴが不気味な大道芸をしていて、誰も投げ銭できずにざわついてました。</p>
+            </div>
+            <div class="witness-card">
+                <div class="witness-user">👤 匿名希望さん</div>
+                <p class="witness-text">部屋の隅でにおおっぴが何か謎の置物を熱心に拝んでいるのを目撃しました…。</p>
+            </div>
+            <div class="witness-card">
+                <div class="witness-user">👤 ドパガキさん</div>
+                <p class="witness-text">な　に　こ　い　つ</p>
+            </div>
+            <div class="witness-card">
+                <div class="witness-user">👤 散歩中の犬さん</div>
+                <p class="witness-text">ちょっと美味そうだったけど何かヤバそうなオーラを感じたので目を逸らしました</p>
+            </div>
+            <div class="witness-card">
+                <div class="witness-user">👤 喫茶店の店員さん</div>
+                <p class="witness-text">ふたりが向かい合わせで座って、無言で見つめ合っていました。通じ合うのでしょうか</p>
+            </div>
+            <div class="witness-card">
+                <div class="witness-user">👤 私が最強のJKぎゃうさん</div>
+                <p class="witness-text">におおっぴがゴミ捨て場で赤いオーラ出しながら覚醒しかけててマジで草生えた</p>
+            </div>
+            <div class="witness-card">
+                <div class="witness-user">👤 赤様さん</div>
+                <p class="witness-text">おしゃぶりに丁度良い</p>
+            </div>
+        </div>
+    </div>
+
+   <!-- 1. おみくじの見た目（HTML） -->
+    <div id="omikuji" style="text-align: center; margin: 50px auto 30px; max-width: 500px; padding: 25px; background: #fff; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: relative; z-index: 10;">
+        <h2 style="font-size: 20px; color: #333; margin-bottom: 5px;">🔮 今日の運勢おみくじ</h2>
+        <hr class="blue-line" style="margin: 0 auto 15px;">
+        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">今日の運勢を占うよ！やってみてね！</p>
+        
+        <button type="button" onclick="drawOmikuji()" style="background-color: #7BC3D1; color: white; border: none; padding: 12px 30px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 15px;">
+            おみくじを引く！
+        </button>
+
+        <div id="omikuji-result" style="display: none; margin-top: 20px; padding: 15px; background: #F4F4F0; border-radius: 10px;">
+            <h3 id="omikuji-fortune" style="font-size: 22px; color: #E65100; margin-bottom: 8px;"></h3>
+            <p id="omikuji-text" style="font-size: 14px; line-height: 1.6; color: #333; margin: 0;"></p>
+        </div>
+    </div>
+
+    <!-- 2. おみくじを動かすプログラム（JavaScript） -->
+    <script>
+        function drawOmikuji() {
+            const omikujiResults = [
+                { fortune: "超大吉", text: "今日通る交差点の信号がすべて青になるレベルの強運。買いに行ったアイスが奇跡的に10%増量しているかも。" },
+                 { fortune: "大吉", text: "電車で目の前の席がピンポイントで空きます。しかも風がちょうどいいベストポジション。" },
+                { fortune: "中吉", text: "ずっと思い出せなかった「あの曲のタイトル」や「芸能人の名前」が、お風呂に入っている瞬間に突然脳内に降臨します。スッキリ！" },
+                 { fortune: "小吉", text: "階段でちょっとつまずきますが、誰も見ていません。華麗なステップに変装すればセーフ。" },
+                { fortune: "吉", text: "道端の野良猫と3秒以上目が合います。それ以上でもそれ以下でもない、平和な一日。" },
+                { fortune: "末吉", text: "服に汁が跳ねますが、ちょうど模様と同化して誰にもバレません。セーフ" },
+                { fortune: "凶", text: "結んでも結んでも靴紐がほどける日。カカトを踏まない程度にゆっくり歩きましょう。" },
+                { fortune: "大凶", text: "タンスの角があなたの足の小指を狙っています。部屋を歩くときは全集中で！" }
+            ];
+
+            const randomIndex = Math.floor(Math.random() * omikujiResults.length);
+            const selected = omikujiResults[randomIndex];
+
+            const fortuneEl = document.getElementById('omikuji-fortune');
+            const textEl = document.getElementById('omikuji-text');
+            const resultBox = document.getElementById('omikuji-result');
+
+            if (fortuneEl && textEl && resultBox) {
+                fortuneEl.textContent = selected.fortune;
+                textEl.textContent = selected.text;
+                resultBox.style.display = 'block';
+            }
+        }
+    </script>
+
+    <footer>
+        &copy; 2026 におおっぴ＆さとうきっぴ公式サイト
+    </footer>
+    
+    
+    <script>
+        // タップした時に喋るセリフのリスト
+        const niooppiLines = [
+            "投資は自己責任でね",
+            "（何かを熱心に拝んでいる…）",
+            "ぶどう買ってきて",
+            "終末だけはマジで勘弁",
+            "覚醒したら赤くなるよ？"
+        ];
+
+        const satokippiLines = [
+            "大道芸見せるよ！",
+            "これ手編みのマフラー（謎の形）",
+            "救済なんていらねぇ…",
+            "今日の晩ごはんは虫の踊り食い♪",
+            "編み物中だから話しかけないで"
+        ];
+
+        function speak(char) {
+            let bubble, lines;
+            if (char === 'niooppi') {
+                bubble = document.getElementById('speech-niooppi');
+                lines = niooppiLines;
+            } else {
+                bubble = document.getElementById('speech-satokippi');
+                lines = satokippiLines;
+            }
+
+            // ランダムでセリフを選択
+            const randomLine = lines[Math.floor(Math.random() * lines.length)];
+            bubble.textContent = randomLine;
+            
+            // 吹き出しを表示
+            bubble.classList.remove('hidden');
+
+            // 3秒後に自動で消す
+            clearTimeout(bubble.timer);
+            bubble.timer = setTimeout(() => {
+                bubble.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
+

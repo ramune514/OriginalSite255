@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご購入手続き | におおっぴとさとうきっぴ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .buy-page-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .buy-qty-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .buy-qty-btn {
+            background-color: #7BC3D1;
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #7BC3D1;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body style="background-color: #F4F4F0;">
+
+    <div class="buy-page-container">
+        <!-- 注文フォーム画面 -->
+        <div id="step-form">
+            <h2>ご注文手続き</h2>
+            <hr class="blue-line" style="margin: 0 auto 20px;">
+            
+            <h3 id="item-title">商品名</h3>
+            <p id="item-price" style="font-weight: bold; color: #7BC3D1;">￥0</p>
+
+            <div class="buy-qty-box">
+                <span>数量:</span>
+                <button class="buy-qty-btn" onclick="changeQty(-1)">ー</button>
+                <span id="qty-count" style="font-size: 18px; font-weight: bold;">1</span>
+                <button class="buy-qty-btn" onclick="changeQty(1)">＋</button>
+            </div>
+            
+            <p id="total-price" style="font-size: 18px; font-weight: bold; color: #E65100;">合計: ￥0</p>
+
+            <div class="form-group">
+                <label>お届け先お名前</label>
+                <input type="text" placeholder="例: におお 太郎">
+            </div>
+
+            <div class="form-group">
+                <label>お支払い方法</label>
+                <select>
+                    <option>クレジットカード/デビットカード</option>
+                    <option>におおっぴPay（還元率0%）</option>
+                    <option>ぶどう現物支給</option>
+                    <option>コンビニ払い（セ⚪︎ン-イ⚪︎ブン・フ⚪︎ミリーマ⚪︎ト・ロ⚪︎ソン・ミニスト⚪︎プ）</option>
+                    <option>後払い</option>
+
+                </select>
+            </div>
+
+            <button class="submit-btn" onclick="completeOrder()">注文を確定する</button>
+            <br>
+            <a href="index.html" class="back-link">← トップページに戻る</a>
+        </div>
+
+        <!-- 完了＆ネタばらし画面（最初は隠す） -->
+        <div id="step-result" class="hidden">
+            <h2 style="color: #7BC3D1;">🎉 ご購入ありがとうございます！</h2>
+            <p id="result-text" style="line-height: 1.8; margin: 25px 0; text-align: left;"></p>
+            <a href="index.html" class="submit-btn" style="display: block; text-decoration: none;">公式サイトへ戻る</a>
+        </div>
+    </div>
+
+    <script>
+        // URLパラメータから商品（tshirtかplushか）を判別
+        const params = new URLSearchParams(window.location.search);
+        const itemType = params.get('item');
+
+        let itemName = "におおっぴ 公式Tシャツ";
+        let unitPrice = 2700;
+
+        if (itemType === 'plush') {
+            itemName = "におおっぴ ぬいぐるみ";
+            unitPrice = 1000000;
+        }
+
+        let qty = 1;
+
+        // 初期表示設定
+        document.getElementById('item-title').textContent = itemName;
+        updateDisplay();
+
+        function changeQty(amount) {
+            qty += amount;
+            if (qty < 1) qty = 1;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById('item-price').textContent = `単価: ￥${unitPrice.toLocaleString()}`;
+            document.getElementById('qty-count').textContent = qty;
+            document.getElementById('total-price').textContent = `合計: ￥${(unitPrice * qty).toLocaleString()}`;
+        }
+
+        // 「注文を確定する」ボタンを押したとき
+        function completeOrder() {
+            document.getElementById('step-form').classList.add('hidden');
+            document.getElementById('step-result').classList.remove('hidden');
+
+            const resultText = document.getElementById('result-text');
+            const totalStr = (unitPrice * qty).toLocaleString();
+
+            if (itemType === 'plush') {
+                resultText.innerHTML = `ご注文完了の手続きを行いました…<br><br>…が、<strong>合計￥${totalStr}の決済エラーが発生しました。</strong><br>におおっぴが勝手に全額「ぶどう株」の購入に充てたようです。<br><br><strong>におおっぴ「投資は自己責任でね」</strong>`;
+            } else {
+                resultText.innerHTML = `商品（${qty}個）の発送手配を完了しました！<br><br>…のはずでしたが、発送直前にさとうきっぴが「手編みの方が温かいから」と全商品をハサミで切り刻んでしまいました。<br><br><strong>さとうきっぴ「これ手編みのマフラー（謎の形）」</strong>`;
+            }
+        }
+    </script>
+</body>
+</html>
